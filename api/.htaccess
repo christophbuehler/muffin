@@ -1,0 +1,6 @@
+RewriteEngine On
+Header set Access-Control-Allow-Origin "*"
+
+# redirect all the request to index.php
+RewriteCond %{REQUEST_URI} !\.(html|js|css)$
+RewriteRule (.+)$ index.php?url=$1 [QSA,L]
